@@ -1,0 +1,20 @@
+--- lnx_init.orig	2014-04-10 12:16:00.000000000 -0500
++++ lnx_init.c	2013-04-17 10:13:11.000000000 -0500
+@@ -79,6 +79,8 @@
+ void
+ xf86OpenConsole(void)
+ {
++    /*for cray XK nodes*/
++	return;
+     int i, fd = -1, ret;
+     struct vt_mode VT;
+     struct vt_stat vts;
+@@ -263,6 +265,8 @@
+ void
+ xf86CloseConsole(void)
+ {
++    /*for cray xk nodes*/
++	return;
+     struct vt_mode VT;
+     int ret;
+
