@@ -1,0 +1,16 @@
+#%Module
+
+proc ModulesHelp { } {
+   puts stderr "Sets up the environment to use the HW accelerated opengl api"
+   puts stderr "Prepends a directory to LD_LIBRARY_PATH and PKG_CONFIG_PATH"
+}
+
+set VERSION 1.0.0 
+set ARCH sles11.1_gnu4.3.4
+set PACKAGE opengl 
+set APP /usr/local/X11R7.7
+
+prepend-path LD_LIBRARY_PATH $APP/lib
+prepend-path LDFLAGS -L$APP/lib
+prepend-path PKG_CONFIG_PATH $APP/lib/pkgconfig
+setenv DISPLAY :1
